@@ -32,7 +32,7 @@ export const loginUser = async (req, res, next) => {
             });
         }
         
-        res.cookie(`jwt`, response.token, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
+        res.cookie('jwt', response.token, { httpOnly: false, maxAge: 3 * 60 * 60 * 1000, sameSite: 'None', secure: true });
         return res.status(200).json({
             status: "success",
             message: "Estas logeado.",
@@ -74,7 +74,7 @@ export const registerUser = async (req, res, next) => {
         }
 
 
-        res.cookie(`jwt`, response.token, { httpOnly: true, maxAge: 3 * 60 * 60 * 1000 });
+        res.cookie('jwt', response.token, { httpOnly: false, maxAge: 3 * 60 * 60 * 1000, sameSite: 'None', secure: true });
         return res.status(200).json({
             status: "success",
             message: "Te has registrado correctamente.",
