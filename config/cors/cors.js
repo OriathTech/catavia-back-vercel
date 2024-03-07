@@ -1,4 +1,4 @@
-const whiteList = ["http://localhost:3000", "http://localhost:8080", "https://catavia-front.vercel.app"];
+const whiteList = ["http://localhost:3000", "http://localhost:8080", "https://catavia.vercel.app"];
 
 const corsOptions = {
   origin: function (origin, callback) {
