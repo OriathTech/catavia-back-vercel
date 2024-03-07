@@ -15,7 +15,7 @@ export const calculateProductPriceStatus = async (product) => {
             }
         }
 
-        return await rep.updateOneById(productModel, product._id, { price, status });
+        return await rep.updateOneById(productModel, product._id, { price: parseFloat(price.toFixed(2)), status });
     } catch (error) {
         throw error
     }
